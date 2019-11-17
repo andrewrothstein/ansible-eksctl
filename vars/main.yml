@@ -1,0 +1,8 @@
+---
+# vars file for eksctl
+eksctl_platform: '{{ eksctl_os }}_{{ eksctl_arch }}'
+eksctl_archive: eksctl_{{ eksctl_platform }}.{{ eksctl_archive_type | default("tar.gz") }}
+eksctl_url: '{{ eksctl_mirror }}/{{ eksctl_ver }}/{{ eksctl_archive }}'
+eksctl_checksum: '{{ eksctl_checksums[eksctl_ver][eksctl_platform] }}'
+eksctl_install_dir: '{{ eksctl_parent_install_dir }}/eksctl-{{ eksctl_ver }}'
+eksctl_link: '{{ eksctl_parent_install_dir }}/bin/eksctl'
