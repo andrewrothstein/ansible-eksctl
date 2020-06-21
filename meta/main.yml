@@ -9,13 +9,15 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - all
+        - 7
+        - 8
     - name: Fedora
       versions:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - bionic
+        - xenial
     - name: Alpine
       versions:
         - all
@@ -25,7 +27,6 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
-        - jessie
         - stretch
   galaxy_tags:
     - development
@@ -33,4 +34,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
-    version: v1.1.2
+    version: v1.1.3
