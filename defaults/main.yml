@@ -1,6 +1,6 @@
 ---
 # defaults file for eksctl
-eksctl_ver: 0.28.0
+eksctl_ver: 0.28.1
 eksctl_os: Linux
 eksctl_arch: amd64
 eksctl_mirror: https://github.com/weaveworks/eksctl/releases/download
@@ -159,3 +159,11 @@ eksctl_checksums:
     Linux_amd64: sha256:7c0ee529eb50feee902332f69f0a238d73aff7b972d4b3e99a56762eea621779
     # https://github.com/weaveworks/eksctl/releases/download/0.28.0/eksctl_Windows_amd64.zip
     Windows_amd64: sha256:af11d9852856648d6865947ad67a8385981fc13f8cf8eae03bc5e86345a285ea
+  # https://github.com/weaveworks/eksctl/releases/download/0.28.1/eksctl_checksums.txt
+  '0.28.1':
+    # https://github.com/weaveworks/eksctl/releases/download/0.28.1/eksctl_Darwin_amd64.tar.gz
+    Darwin_amd64: sha256:6fd619739df5a3778c882965e1f40b0a2998349434dc321ac54d5a6a1e93eeb0
+    # https://github.com/weaveworks/eksctl/releases/download/0.28.1/eksctl_Linux_amd64.tar.gz
+    Linux_amd64: sha256:9d4f5001bedbdf6afa53bb190c85453266317f5170f3794ae20f4b6a1853cbe8
+    # https://github.com/weaveworks/eksctl/releases/download/0.28.1/eksctl_Windows_amd64.zip
+    Windows_amd64: sha256:15e9ca2a55a9c6b7acc78d9955ead2d8276ee49f6b1c87afd6c23b9bf9af91e3
