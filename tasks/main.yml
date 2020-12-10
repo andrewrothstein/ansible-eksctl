@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install
+- name: check for install in {{ eksctl_install_dir }}
   become: yes
   stat:
     path: '{{ eksctl_install_dir }}'
@@ -17,40 +17,40 @@
   register: eksctl_binary
 - when: not eksctl_binary.stat.exists
   block:
-    - name: download
+    - name: downloading {{ eksctl_url }}
       become: yes
       become_user: root
       get_url:
         url: '{{ eksctl_url }}'
-        dest: /tmp/{{ eksctl_archive }}
+        dest: '{{ eksctl_tmp_archive }}'
         mode: 0644
         checksum: '{{ eksctl_checksum }}'
-    - name: mkdir
+    - name: mkdir {{ eksctl_install_dir }}
       become: yes
       become_user: root
       file:
         path: '{{ eksctl_install_dir }}'
         mode: 0755
         state: directory
-    - name: unarchive
+    - name: unarchive {{ eksctl_tmp_archive }} into {{ eksctl_install_dir }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ eksctl_archive }}
+        src: '{{ eksctl_tmp_archive }}'
         dest: '{{ eksctl_install_dir }}'
-        creates: '{{ eksctl_install_dir }}/eksctl'
+        creates: '{{ eksctl_install_exe }}'
   always:
-    - name: cleanup
+    - name: rm {{ eksctl_tmp_archive }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ eksctl_archive }}
+        path: '{{ eksctl_tmp_archive }}'
         state: absent
-- name: link
+- name: linking {{ eksctl_link }} to {{ eksctl_install_exe }}
   become: yes
   become_user: root
   file:
-    src: '{{ eksctl_install_dir }}/eksctl'
+    src: '{{ eksctl_install_exe }}'
     dest: '{{ eksctl_link }}'
     state: link
