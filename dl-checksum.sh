@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-#set -x
+set -e
 DIR=~/Downloads
 MIRROR=https://github.com/weaveworks/eksctl/releases/download
 APP=eksctl
@@ -36,4 +36,4 @@ dl_ver()
     dl $ver $lchecksums Windows amd64 zip
 }
 
-dl_ver ${1:-0.36.0}
+dl_ver ${1:-0.36.1}
