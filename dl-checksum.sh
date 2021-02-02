@@ -21,7 +21,7 @@ dl()
 dl_ver()
 {
     local ver=$1
-    local lchecksums=$DIR/${APP}_${ver}_checksums.txt
+    local lchecksums=$DIR/${APP}_checksums.txt
     local rchecksums=$MIRROR/$ver/${APP}_checksums.txt
     if [ ! -e $lchecksums ];
     then
@@ -36,4 +36,4 @@ dl_ver()
     dl $ver $lchecksums Windows amd64 zip
 }
 
-dl_ver ${1:-0.36.2}
+dl_ver ${1:-0.37.0}
