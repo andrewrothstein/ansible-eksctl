@@ -21,7 +21,7 @@ dl()
 dl_ver()
 {
     local ver=$1
-    local lchecksums=$DIR/${APP}_checksums.txt
+    local lchecksums=$DIR/${APP}_${ver}_checksums.txt
     local rchecksums=$MIRROR/$ver/${APP}_checksums.txt
     if [ ! -e $lchecksums ];
     then
