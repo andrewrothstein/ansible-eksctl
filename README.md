@@ -1,6 +1,6 @@
 andrewrothstein.eksctl
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-eksctl.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-eksctl)
+![Build Status](https://github.com/andrewrothstein/ansible-eksctl/actions/workflows/build.yml/badge.svg)
 
 Installs [eksctl](https://eksctl.io/).
 
