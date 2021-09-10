@@ -21,6 +21,7 @@ dl()
 dl_ver()
 {
     local ver=$1
+    # https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_checksums.txt
     local lchecksums=$DIR/${APP}_${ver}_checksums.txt
     local rchecksums=$MIRROR/$ver/${APP}_checksums.txt
     if [ ! -e $lchecksums ];
@@ -29,11 +30,11 @@ dl_ver()
     fi
 
     printf "  # %s\n" $rchecksums
-    printf "  '%s':\n" $ver
+    printf "  %s:\n" $ver
 
     dl $ver $lchecksums Darwin amd64
     dl $ver $lchecksums Linux amd64
     dl $ver $lchecksums Windows amd64 zip
 }
 
-dl_ver ${1:-0.63.0}
+dl_ver ${1:-v0.66.0}
