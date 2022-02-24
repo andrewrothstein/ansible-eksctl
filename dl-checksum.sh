@@ -26,7 +26,7 @@ dl_ver()
     local rchecksums=$MIRROR/$ver/${APP}_checksums.txt
     if [ ! -e $lchecksums ];
     then
-        wget -q -O $lchecksums $rchecksums
+        curl -sSLf -o $lchecksums $rchecksums
     fi
 
     printf "  # %s\n" $rchecksums
@@ -37,4 +37,6 @@ dl_ver()
     dl $ver $lchecksums Windows amd64 zip
 }
 
-dl_ver ${1:-v0.80.0}
+
+dl_ver v0.82.0
+dl_ver ${1:-v0.83.0}
