@@ -33,9 +33,16 @@ dl_ver()
     printf "  %s:\n" $ver
 
     dl $ver $lchecksums Darwin amd64
+    dl $ver $lchecksums Darwin arm64
     dl $ver $lchecksums Linux amd64
+    dl $ver $lchecksums Linux armv6
+    dl $ver $lchecksums Linux armv7
+    dl $ver $lchecksums Linux arm64
     dl $ver $lchecksums Windows amd64 zip
+    dl $ver $lchecksums Windows armv6 zip
+    dl $ver $lchecksums Windows armv7 zip
+    dl $ver $lchecksums Windows arm64 zip
 }
 
 
-dl_ver ${1:-v0.92.0}
+dl_ver ${1:-v0.94.0}
