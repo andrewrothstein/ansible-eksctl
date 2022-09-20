@@ -1,5 +1,7 @@
 ---
 # vars file for eksctl
+eksctl_os: '{{ ansible_system }}'
+eksctl_arch: '{{ eksctl_arch_map[ansible_architecture] }}'
 eksctl_platform: '{{ eksctl_os }}_{{ eksctl_arch }}'
 eksctl_archive: eksctl_{{ eksctl_platform }}.{{ eksctl_archive_type | default("tar.gz") }}
 eksctl_tmp_archive: /tmp/{{ eksctl_archive }}
