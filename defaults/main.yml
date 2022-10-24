@@ -1,6 +1,6 @@
 ---
 # defaults file for eksctl
-eksctl_ver: v0.113.0
+eksctl_ver: v0.115.0
 eksctl_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -998,3 +998,25 @@ eksctl_checksums:
     Windows_armv7: sha256:1352f54d0a127df60abdd59e056a0d1e365f2d4ee23440ef960e3fda981281fa
     # https://github.com/weaveworks/eksctl/releases/download/v0.113.0/eksctl_Windows_arm64.zip
     Windows_arm64: sha256:7ede4992c998d3e6197eafb88e21478a91f693e2d55e41add384c4de117df47d
+  # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_checksums.txt
+  v0.115.0:
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Darwin_amd64.tar.gz
+    Darwin_amd64: sha256:89ec968798961ed7ee4621e8603d958c15a8f8a5c2e3ba4c926f2ff2f283dbea
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Darwin_arm64.tar.gz
+    Darwin_arm64: sha256:51465a4ca254a5063b95f6090c65630ca4cd229a686bc653c55e8cfa30a1d3e9
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Linux_amd64.tar.gz
+    Linux_amd64: sha256:d1d6d6d56ae33f47242f769bea4b19587f1200e5bbef65f3a35d159ed2463716
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Linux_armv6.tar.gz
+    Linux_armv6: sha256:f8231530792fe857625845474ae37b8fcd4e9bb316bcf56f5facfaa829e6b091
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Linux_armv7.tar.gz
+    Linux_armv7: sha256:17e6c58584f7789ee180ec8944fe0f0e680b7c6bd152109775e7b3d007e19c3e
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Linux_arm64.tar.gz
+    Linux_arm64: sha256:4eb9072d35e8ef001c31cd8c0516064dfb10b6c548ce2ac8e2289b34d9c4266e
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Windows_amd64.zip
+    Windows_amd64: sha256:b35757a838a8b3d041cd644e2d1b4fbf11eb4b5f2af1bce4bc1a1fb4b7978151
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Windows_armv6.zip
+    Windows_armv6: sha256:14f7e47bb012cdb2ffeffb36e42898774edcf8e4da5c0d1b2853483f7bffbbd2
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Windows_armv7.zip
+    Windows_armv7: sha256:ee6189f939ad0c546ccb71397f810246aa9c0c65bfb7f6cb7878c6d7483d09b6
+    # https://github.com/weaveworks/eksctl/releases/download/v0.115.0/eksctl_Windows_arm64.zip
+    Windows_arm64: sha256:e918218c07f84b5896f063cf0c1de268176f0f6262f28263e6512f4edf86958c
