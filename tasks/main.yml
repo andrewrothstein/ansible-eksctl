@@ -12,15 +12,15 @@
       paths:
         - '{{ role_path }}/vars'
 - name: check for install in {{ eksctl_install_dir }}
-  become: yes
+  become: true
   stat:
     path: '{{ eksctl_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: eksctl_binary
 - when: not eksctl_binary.stat.exists
   block:
     - name: downloading {{ eksctl_url }}
-      become: yes
+      become: true
       become_user: root
       get_url:
         url: '{{ eksctl_url }}'
@@ -28,29 +28,29 @@
         mode: 0644
         checksum: '{{ eksctl_checksum }}'
     - name: mkdir {{ eksctl_install_dir }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ eksctl_install_dir }}'
         mode: 0755
         state: directory
     - name: unarchive {{ eksctl_tmp_archive }} into {{ eksctl_install_dir }}
-      become: yes
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ eksctl_tmp_archive }}'
         dest: '{{ eksctl_install_dir }}'
         creates: '{{ eksctl_install_exe }}'
   always:
     - name: rm {{ eksctl_tmp_archive }}
-      become: yes
+      become: true
       become_user: root
       file:
         path: '{{ eksctl_tmp_archive }}'
         state: absent
 - name: linking {{ eksctl_link }} to {{ eksctl_install_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ eksctl_install_exe }}'
