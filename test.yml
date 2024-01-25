@@ -1,9 +1,14 @@
 ---
-- hosts: all
-  roles:
-  - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.eksctl
+  hosts: all
   tasks:
-  - command: /usr/local/bin/eksctl version
-    register: eksctl_test_output
-  - debug:
-      msg: '{{ eksctl_test_output.stdout }}'
+    - name: Installing andrewrothstein.eksctl
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'eksctl version'
+      ansible.builtin.command: /usr/local/bin/eksctl version
+      changed_when: false
+      register: eksctl_test_output
+    - name: Output of 'eksctl version'
+      ansible.builtin.debug:
+        msg: '{{ eksctl_test_output.stdout }}'
